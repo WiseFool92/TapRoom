@@ -3,7 +3,7 @@ import Tap from './Tap';
 import PropTypes from 'prop-types';
 
 
-function TapList(){
+function TapList(props) {
   return (
     <>
     <hr />
