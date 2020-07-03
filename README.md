@@ -1,11 +1,11 @@
-# _Farmers Market_
+# _Tap Room_
 
-#### July 1st, 2020
+#### July 3rd, 2020
 
 ## Description
 
-_Website that displays the produce that will be avaliable at the farmers market each week.
-A web application for farmer's market. Customers can see which location & food avalible at this farmers market. The market has different crops in different seasons. Different produce is available in different seasons._
+_Website that displays the taps avaliable at the local Green Dragon Inn.
+A web application for tap rooms. Where customers can see tap choices and make purchases._
 
 ## Setup
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 
 function Tap(props) {
   return (
@@ -12,6 +13,14 @@ function Tap(props) {
         <h4>{props.pints}</h4>
         <hr />
       </div>
+      <Button onClick={() => props.whenPintSold({
+          name: props.name,
+          brand: props.brand,
+          price: props.price,
+          alcoholContent: props.alcoholContent,
+          pints: props.pints,
+          id: props.id
+        })}>Sell Pint</Button>
     </>
   )
 }
@@ -23,7 +32,8 @@ Tap.propTypes = {
   alcoholContent: PropTypes.string.isRequired,
   pints: PropTypes.number,
   id: PropTypes.string,
-  whenTapClicked: PropTypes.func
+  whenTapClicked: PropTypes.func,
+  whenPintSold: PropTypes.func
 }
 
 export default Tap;

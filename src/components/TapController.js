@@ -61,20 +61,37 @@ class TapControl extends React.Component {
                     formVisibleOnPage: false });
   }
 
+  handleSellingPint = (drinkSold) => {
+    if (drinkSold.pints > 0) {
+      this.setState(prevState => ({
+        availableTaps: prevState.availableTaps.map(
+          (tap, index) => (tap.id === drinkSold.id ? Object.assign({}, this.state.availableTaps[index], { pints: parseInt
+          (drinkSold.pints - 1) }) : tap)
+        )
+      }));
+    }
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
-      currentlyVisibleState = <EditTapForm tap = {this.state.selectedTap} onClickEdit = {this.handleEditingTapInList} onEditTap = {this.handleEditingTapInList}/>
-      buttonText="Return to Taps"
+      currentlyVisibleState = <EditTapForm tap = {this.state.selectedTap} 
+      onClickEdit = {this.handleEditingTapInList} 
+      onEditTap = {this.handleEditingTapInList} />
+      buttonText="Return to Taps";
     } else if(this.state.selectedTap !=null){
-      currentlyVisibleState = <TapDetail tap = {this.state.selectedTap} onClickEdit = {this.handleEditClick} onClickDelete = {this.handleDeletingTap} />
-      buttonText="Return to Taps"
+      currentlyVisibleState = <TapDetail tap = {this.state.selectedTap} 
+      onClickEdit = {this.handleEditClick} 
+      onClickDelete = {this.handleDeletingTap} />
+      buttonText="Return to Taps";
     } else if (this.state.formVisibleOnPage){
-      currentlyVisibleState = <NewTapForm onNewTapCreation={this.handleAddingNewTap}/>;
+      currentlyVisibleState = <NewTapForm onNewTapCreation = {this.handleAddingNewTap} />
       buttonText = "Return to Taps";
     } else {
-      currentlyVisibleState = <TapList availableTaps = {this.state.availableTaps} onTapSelection={this.handleChangingSelectedTap}/>;
+      currentlyVisibleState = <TapList availableTaps = {this.state.availableTaps} 
+      onTapSelection={this.handleChangingSelectedTap}
+      onSellPint = {this.handleSellingPint} />
       buttonText = "Add Tap";
     }
     return(

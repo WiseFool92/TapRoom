@@ -10,6 +10,7 @@ function TapDetail(props) {
       <h4>{tap.brand}</h4>
       <h4>{tap.price}</h4>
       <h4>{tap.alcoholContent}</h4>
+      <h4>Pints Left:</h4>
       <h4>{tap.pints}</h4>
       <button onClick = { props.onClickEdit }>Update Tap</button>
       <button onClick = { props.onClickDecrement }>Buy a pint</button>

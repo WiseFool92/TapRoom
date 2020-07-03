@@ -9,14 +9,15 @@ function TapList(props) {
     <hr />
     {props.availableTaps.map((tap) => 
       <Tap 
-        whenTapClicked = { props.onTapSelection }
-        name = { tap.name }
-        brand = { tap.brand }
-        price = { tap.price }
-        alcoholContent = { tap.alcoholContent }
-        pints = { tap.pints }
-        key = { tap.id }
-        id = { tap.id }
+        whenTapClicked = {props.onTapSelection}
+        whenPintSold = {props.onSellPint}
+        name = {tap.name}
+        brand = {tap.brand}
+        price = {tap.price}
+        alcoholContent = {tap.alcoholContent}
+        pints = {tap.pints}
+        key = {tap.id}
+        id = {tap.id}
       />
     )}
     </>
@@ -25,7 +26,8 @@ function TapList(props) {
 
 TapList.propTypes = {
   availableTaps: PropTypes.array,
-  onTapSelection: PropTypes.func
+  onTapSelection: PropTypes.func,
+  onSellPint: PropTypes.func
 }
 
 export default TapList;
