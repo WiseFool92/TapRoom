@@ -9,13 +9,21 @@ function Tap(props) {
         <h4>{props.brand}</h4>
         <h4>{props.price}</h4>
         <h4>{props.alcoholContent}</h4>
+        <h4>{props.pints}</h4>
+        <hr />
       </div>
     </>
   )
 }
 
-name: 'Butter Rum',
-    brand: 'Whys the rum gone',
-    price: '5 Dabloons',
-    alcoholcontent: '20 Proof',
-    pints: 
+Tap.propTypes = {
+  name: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  alcoholContent: PropTypes.string.isRequired,
+  pints: PropTypes.number,
+  id: PropTypes.string,
+  whenTapClicked: PropTypes.func
+}
+
+export default Tap;
