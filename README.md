@@ -81,15 +81,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ![Diagram of react views](public/.drawio)
 
-The Green Dragon
-
-Drinks
-  Butter Rum
-  Mead
-  Ale
-  FireWater
-  Wine
-
 ### Behavior Driven Development Spec List
 
 #### Tap Room
