@@ -1,13 +1,36 @@
 import React from 'react';
 import Tap from './Tap';
+import PropTypes from 'prop-types';
 
 
 function TapList(){
   return (
-    <Tap />
+    <>
+    <hr />
+    {props.availableTaps.map((tap) => 
+      <Tap 
+        whenTapClicked = { props.onTapSelection }
+        name = { tap.name }
+        brand = { tap.brand }
+        price = { tap.price }
+        alcoholContent = { tap.alcoholContent }
+        pints = { tap.pints }
+        key = { tap.id }
+        id = { tap.id }
+      />
+    )}
+    </>
   );
 }
 
+TapList.propTypes = {
+  availableTaps: PropTypes.array,
+  onTapSelection: PropTypes.func
+}
+
+export default TapList;
+
+// Likely Won't actually use
 const HardTapList = [
   {
     name: 'Butter Rum',
@@ -45,5 +68,3 @@ const HardTapList = [
     pints: 124
   }
 ]
-
-export default TapList;
