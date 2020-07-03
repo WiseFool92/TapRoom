@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 
 function TapDetail(props) {
   const { tap } = props;
@@ -12,9 +13,8 @@ function TapDetail(props) {
       <h4>{tap.alcoholContent}</h4>
       <h4>Pints Left:</h4>
       <h4>{tap.pints}</h4>
-      <button onClick = { props.onClickEdit }>Update Tap</button>
-      <button onClick = { props.onClickDecrement }>Buy a pint</button>
-      <button onClick = {() => props.onClickDelete(tap.id) }>Delete Tap</button>
+      <Button onClick = { props.onClickEdit }>Update Tap</Button>
+      <Button onClick = {() => props.onClickDelete(tap.id) }>Delete Tap</Button>
     </>
   );
 }
