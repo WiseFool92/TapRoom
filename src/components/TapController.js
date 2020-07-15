@@ -65,7 +65,7 @@ class TapControl extends React.Component {
     if (drinkSold.pints > 0) {
       this.setState(prevState => ({
         availableTaps: prevState.availableTaps.map(
-          (tap, index) => (tap.id === drinkSold.id ? Object.assign({}, this.state.availableTaps[index], { pints: parseInt
+          (tap, index) => (tap.id === drinkSold.id ? Object.assign({}, this.state.availableTaps[index], { pints:
           (drinkSold.pints - 1) }) : tap)
         )
       }));

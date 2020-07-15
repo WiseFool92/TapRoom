@@ -21,7 +21,8 @@ function TapDetail(props) {
 
 TapDetail.propTypes = {
   tap: PropTypes.object,
-  onClickEdit: PropTypes.func
+  onClickEdit: PropTypes.func,
+  onClickDelete: PropTypes.func
 }
 
 export default TapDetail;
